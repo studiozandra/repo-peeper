@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from repo_peeper import views
 
 urlpatterns = [
     path('', include('apps.core.urls')),
     path('account/', include('apps.accounts.urls')),
     path('admin/', admin.site.urls),
+    path('allrepos/', views.allrepos, name='allrepos'),
 
 ] + static( # Add in uploaded media files
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
