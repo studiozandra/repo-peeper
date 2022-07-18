@@ -87,9 +87,3 @@ def edit_profile(request):
         'form': form,
     }
     return render(request, 'accounts/edit_profile.html', context)
-
-def allrepos(request):
-    context = {
-        # TODO: Need to include data from API here
-    }
-    return render(request, "allrepos.html", context)
