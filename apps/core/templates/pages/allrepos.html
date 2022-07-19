@@ -21,14 +21,15 @@ All repos
         <!-- loop to add each row (tr). might need an if stmt -->
         <tbody>
             {{ variable_if_repos_exist }}
+            {% for repo in response %}
             <tr>
-                <th scope="row">{{ repo_name }}</th>
-                <td>{{ repo_size }}</td>
-                <td>{{ repo_stars }}</td>
-                <td>{{ repo_lang }}</td>
-                <td>{{ repo_link }}</td>
+                <th scope="row">{{ repo.name }}</th>
+                <td>{{ repo.size }}</td>
+                <td>{{ repo.stargazers_count }}</td>
+                <td>{{ repo.language}}</td>
+                <td>{{ repo.html_url }}</td>
             </tr>
-
+            {% endfor %}
         </tbody>
 
         
