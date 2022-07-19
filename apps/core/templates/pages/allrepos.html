@@ -7,5 +7,30 @@ All repos
 
 {% block content %}
     <h1>All repos</h1>
-    <table> <!-- TODO: add for loop here... --> </table>
+    <table class="table mt-5"> 
+        <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Size</th>
+              <th scope="col">Stars</th>
+              <th scope="col">Language</th>
+              <th scope="col">Link</th>
+            </tr>
+        </thead>
+
+        <!-- loop to add each row (tr). might need an if stmt -->
+        <tbody>
+            {{ variable_if_repos_exist }}
+            <tr>
+                <th scope="row">{{ repo_name }}</th>
+                <td>{{ repo_size }}</td>
+                <td>{{ repo_stars }}</td>
+                <td>{{ repo_lang }}</td>
+                <td>{{ repo_link }}</td>
+            </tr>
+
+        </tbody>
+
+        
+    </table>
 {% endblock content %}
