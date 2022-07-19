@@ -13,12 +13,13 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+from repo_peeper import secret_key
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: On production, set SECRET_KEY env variable to override
-SECRET_KEY = 'django-insecure-a8bt+9d09+z0ge_)46!_=*en5z915*n(pxbvzgx$(85bfkhf6v'
+SECRET_KEY = secret_key
 
 ALLOWED_HOSTS = []
 
