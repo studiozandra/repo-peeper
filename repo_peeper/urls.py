@@ -24,6 +24,8 @@ urlpatterns = [
     path('account/', include('apps.accounts.urls')),
     path('admin/', admin.site.urls),
     path('allrepos/', views.allrepos, name='allrepos'),
+    path('size-chart/', views.repos_by_size, name='repos_by_size'),
+
 
 ] + static( # Add in uploaded media files
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
