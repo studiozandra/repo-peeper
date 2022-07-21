@@ -1,70 +1,10 @@
-![Kickstart Coding Logo](./apps/core/static/images/kickstart_coding_logo.png)
-
-# Kickstart Coding: Django Project Starter
-
-This is an example start project for [Kickstart Coding](https://kickstartcoding.com/)
-Django projects.
-
-It provides a solid foundation for building a Django project that's ready to
-launch to Heroku or similar web-hosting service.
 
 
-## About
+# Repo Peeper
+Browse your Github repos graphically.
 
-### Features
-
-* Clean, simple, and up-to-date: Only a few changes from the officia `django-admin startproject`
-
-* Bootstrap 5: It's all set-up with Bootstrap 5.0.2 CSS, a few example pages,
-  and `django-bootstrap5` for easily bootstrap-based forms
-
-* Accounts:
-    * Log-in and sign-up pages
-    * Custom user class
-    * User profile page and user editing page
-
-* Heroku support: It's one `git push` away from publishing to the world
-
-* Pipenv: It's set-up to use Pipfile
-
-* Code standards: This was created to be a happy medium between the default
-  `django-admin` starting template and heavier weight scaffolding such as
-  Audrey / Daniel Greenfield's
-  [Django Cookiecutter](https://github.com/pydanny/cookiecutter-django),
-  which might be better for larger projects
-
-* Easy development:
-    * Separate `local` and `production` settings
-    * Use Sqlite locally and postgres in production
-    * While for bigger projects production / dev parity is vitally important,
-      this is great for getting started with smaller projects
-
-* Misc nice stuff:
-    * `django-debug-toolbar` -- great debugging tool
-    * Error pages
-
-### Who is this for
-
-* This is for **new Python/Django programmers**, including **coding class
-  students** who want a solid start for a Django project that uses SQLite when
-  developing locally, and is ready to deploy Heroku provisioned Postgres
-  database.
-
-* The documentation assumes you already have fundamental Python, Django, Bash
-  and Heroku knowledge. If you are new to Heroku, read our [Heroku Getting
-  Started guide](http://github.com/kickstartcoding/heroku-getting-started/).
-If you are new to Postgres, read our [Postgres Getting Started guide
-  ](https://github.com/kickstartcoding/postgres-getting-started).
-
-* The documentation *does not* explicitly support Windows. It assumes you use
-  either **macOS** or a **GNU/Linux** distribution such as Ubuntu. That said,
-  it might work.
-
-> This was originally created for Kickstart Coding, the cutting-edge,
-> personalized, and affordable "custom-paced" full-stack online coding program.
-> [Learn more and enroll in our Python / Django, JavaScript / React web
-> development, and career development courses
-> here.](http://kickstartcoding.com/?utm_source=github&utm_campaign=djprojectstarter)
+With thanks to [Kickstart Coding: Django Project Starter](https://kickstartcoding.com/)
+* and the official `django-admin startproject`
 
 
 ## Development
@@ -76,16 +16,13 @@ If you are new to Postgres, read our [Postgres Getting Started guide
 
 ### Running locally
 
-1. Assuming `mycoolproject` is the name of your project, you should start a new
-project using this template as follows:
-```
-django-admin startproject --template=https://github.com/kickstartcoding/django-kcproject-starter/archive/master.zip mycoolproject
-```
+1. Clone or download this project.
 
-2. Go into the newly created project, and use `pipenv` to get your virtualenv
+
+2. Go into the new project directory, and use `pipenv` to get your virtualenv
 setup:
 ```
-cd mycoolproject
+cd repo-peeper
 pipenv shell
 pipenv install --skip-lock --dev
 ```
@@ -96,7 +33,7 @@ python setup.py egg_info Check the logs for full command output.'`.  These
 packages are not needed for development. That's why we have `--skip-lock` 
 specified to prevent these errors from stopping the installation.
 
-3. This starter project *does not* include migrations. Make migrations as such:
+3. Next, make migrations:
 ```
 python manage.py makemigrations accounts
 ```
@@ -111,7 +48,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-### Setting up with GitHub repo
+### Setting up with your own GitHub repo
 
 1. Create a new repo on GitHub, and *BE SURE TO NOT* check "initialize with
 README.md" or `.gitignore` or anything. You want to make a *truly blank repo*
@@ -130,11 +67,11 @@ git commit -m "first" # Make a commit
 
 3. Finally, link up your local repository with the git one, and push.  Follow
 the instructions provided on the github.com page. They will look a little like
-this, except instead of `janeqhacker/mycoolproject` it will be whatever your
+this, except instead of `janeqhacker/repo-peeper` it will be whatever your
 username is and your repo name is:
 
 ```bash
-git remote add origin git@github.com:janeqhacker/mycoolproject.git
+git remote add origin git@github.com:janeqhacker/repo-peeper.git
 git push -u origin master
 ```
 
@@ -210,44 +147,6 @@ random series of letters and numbers. You'll never have to remember it again.
 
 
 ## Troubleshooting
-
-
-### Issue: `django-admin startproject` fails
-
-If you get an error like this while trying to do the initial `startproject`:
-
-    CommandError: couldn't download URL https://github.com/kickstartcoding/django-kcproject-starter/archive/master.zip to master.zip
-    <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1108)>
-
-#### Work around
-
-1. Go to https://github.com/kickstartcoding/django-kcproject-starter
-
-2. Click the button `[Clone or download v]`, then click `[Download Zip]`
-
-3. Save the `django-kcproject-starter-master.zip` file somewhere, such as in
-your `~/Downloads` directory, or in the directory you are working
-
-4. Now, run the same command as before (again using `mycoolproject` as the
-example name), except referencing the downloaded copy. Example commands below:
-
-```bash
-#  If you saved it in ~/Downloads, then do:
-django-admin startproject --template=~/Downloads/django-kcproject-starter-master.zip mycoolproject
-
-#  If you saved it in the current directory:
-django-admin startproject --template=./django-kcproject-starter-master.zip mycoolproject
-```
-
-
-#### Solution
-
-This can happen to some users, often on macOS, and has to do with SSL
-certificates and/or Python3 having some installation issues. To properly solve
-this issue, you may need to upgrade your Python3 installation, and/or add
-updated certificates. This can be tricky and OS-specific, so consider using the
-work-around above.
-
 
 ### Issue: `pipenv install --dev` fails on `psycopg2` and/or `gunicorn`
 
