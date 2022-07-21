@@ -11,7 +11,8 @@ Repos by size
 
         <!-- loop to add chart -->
         <div>
-            {{ bar_chart | safe}}
+            <!-- {{ bar_chart | safe}} -->
+            <embed type="image/svg+xml" src="{{ rendered_chart_svg_as_datauri|safe }}" />
             
         </div>
 
