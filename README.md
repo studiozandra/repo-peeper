@@ -1,7 +1,12 @@
 
 
 # Repo Peeper
-Browse your Github repos graphically.
+Browse your Github repositories graphically.
+
+![Screenshot-Repos-by-size](https://github.com/studiozandra/repo-peeper/assets/17014512/87130920-9ee9-4d90-a2d3-90179f559530) View repos by size
+
+![repo-peeper-Capture](https://github.com/studiozandra/repo-peeper/assets/17014512/e8c4637f-3349-4b3f-918f-9b17f009c0eb) View details on all repos
+
 
 With thanks to [Kickstart Coding: Django Project Starter](https://kickstartcoding.com/)
 * and the official `django-admin startproject`
